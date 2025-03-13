@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  lifewheelz-uixengine:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
+    environment:
+      - NODE_ENV=development
+  # ... rest of docker-compose content ...
