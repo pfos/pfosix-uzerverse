@@ -20,11 +20,30 @@
           name = "lifewheelz-uixengine";
           packages = with pkgs; [
             git nodejs_20 yarn docker docker-compose
-            nodePackages.typescript nodePackages.vite
-            nodePackages.svelte-language-server nodePackages.three
-            nodePackages.d3 nodePackages.redux cypress mdbook
+            nodePackages.typescript
+            nodePackages.svelte-language-server
+            nodePackages.three
+            nodePackages.d3
+            nodePackages.redux
+            cypress
+            mdbook
           ];
-          # ... rest of flake.nix content ...
+          env = [
+            {
+              name = "NODE_ENV";
+              value = "development";
+            }
+            {
+              name = "DOCKER_BUILDKIT";
+              value = "1";
+            }
+          ];
+          commands = [
+            {
+              name = "dev-install";
+              command = "yarn add vite @vitejs/plugin-react";
+            }
+          ];
         };
       }
     );
