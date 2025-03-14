@@ -26,7 +26,6 @@
             docker-compose
             nodePackages.typescript
             nodePackages.svelte-language-server
-            nodePackages.redux
             cypress
             mdbook
           ];
@@ -43,7 +42,7 @@
           commands = [
             {
               name = "dev-install";
-              command = "yarn add vite @vitejs/plugin-react three d3";
+              command = "yarn add vite @vitejs/plugin-react three d3 redux";
             }
           ];
         };
