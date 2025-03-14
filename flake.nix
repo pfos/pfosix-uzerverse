@@ -19,10 +19,13 @@
         devShells.default = pkgs.devshell.mkShell {
           name = "lifewheelz-uixengine";
           packages = with pkgs; [
-            git nodejs_20 yarn docker docker-compose
+            git 
+            nodejs_20 
+            yarn 
+            docker 
+            docker-compose
             nodePackages.typescript
             nodePackages.svelte-language-server
-            nodePackages.three
             nodePackages.d3
             nodePackages.redux
             cypress
@@ -41,7 +44,7 @@
           commands = [
             {
               name = "dev-install";
-              command = "yarn add vite @vitejs/plugin-react";
+              command = "yarn add vite @vitejs/plugin-react three";
             }
           ];
         };
